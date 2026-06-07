@@ -7,7 +7,7 @@ const router = require('./lib/router');
 
 const basic = auth.basic({
   realm: 'Enter username and password.',
-  file: path.join(__dirname, 'users.htpasswd')
+  data: process.env.HTPASSWD_DATA || require('node:fs').readFileSync(path.join(__dirname, 'users.htpasswd'), 'utf8')
 });
 
 const server = http.createServer(basic.check((req, res) => {
