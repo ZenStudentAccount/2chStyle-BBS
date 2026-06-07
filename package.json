@@ -1,0 +1,22 @@
+{
+  "name": "2chstyle-bbs",
+  "version": "1.0.0",
+  "description": "2chStyle-BBS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "cookies": "^0.9.1",
+    "dayjs": "^1.11.10",
+    "http-auth": "^4.1.9",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0"
+  }
+}
