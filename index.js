@@ -2,11 +2,12 @@
 
 const http = require('node:http');
 const auth = require('http-auth');
+const path = require('node:path');
 const router = require('./lib/router');
 
 const basic = auth.basic({
   realm: 'Enter username and password.',
-  file: './users.htpasswd'
+  file: path.join(__dirname, 'users.htpasswd')
 });
 
 const server = http.createServer(basic.check((req, res) => {
